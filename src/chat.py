@@ -6,7 +6,7 @@ from libs.ChatBot import ChatBot
 from config import ENV, CHROMADB_PATH, CSV_SOURCE, CSV_NER_PATH, HFACE_TOKEN
 
 
-db = ChromaManager(use_local_fs=ENV=="collab", path=CHROMADB_PATH)
+db = ChromaManager(use_local_fs=ENV=="colab", path=CHROMADB_PATH)
 
 bot = ChatBot( db=db, name="Rick Sanchez", hface_token=HFACE_TOKEN)
 
@@ -29,3 +29,21 @@ for chat in bot.history:
     print(f"Answer: {a}")
     print("-------------------------------------------------")
 
+while True:
+
+    q = input("You: ")
+
+    if q == "exit":
+        break
+
+    r = bot.ask(collection="cve", question=q, k=10)
+    last_dialog = bot.history[-1]
+
+    i = last_dialog["idiom"]
+    q = last_dialog["question"]
+    a = last_dialog["response"]
+
+    print(f"Idiom Detected: {i}")
+    print(f"Question Translated: {q}")
+    print(f"Answer: {a}")
+    print("-------------------------------------------------")

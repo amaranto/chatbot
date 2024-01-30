@@ -1,7 +1,7 @@
 import os
 import logging
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.ERROR)
 
 ENV=os.environ.get("ENV", "colab").lower()
 CHROMADB_PATH = os.environ.get("CHROMADB_PATH", "data/chroma_data/")
