@@ -1,0 +1,1 @@
+docker build -t pgvector:latest -f ../docker/pgvector.Dockerfile ../docker
