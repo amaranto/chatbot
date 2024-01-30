@@ -39,8 +39,8 @@ Example of search
 print("Example of search")
 r = db.search(collection_name="cve", query="gain root access in linux kernel", k=10)
 
-logger.info(r.keys())
-logger.info(r["ids"])
-logger.info(r["distances"])
-logger.info(r["metadatas"])
-logger.info(r["documents"])
+print(r.keys())
+print(r["ids"])
+print(r["distances"])
+print(r["metadatas"])
+print(r["documents"])
