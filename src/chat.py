@@ -44,6 +44,6 @@ while True:
     a = last_dialog["response"]
 
     print(f"Idiom Detected: {i}")
-    print(f"Question Translated: {q}")
+    print(f"Question : {q}")
     print(f"Answer: {a}")
     print("-------------------------------------------------")
