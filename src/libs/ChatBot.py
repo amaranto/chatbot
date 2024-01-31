@@ -180,6 +180,7 @@ class ChatBot():
             logger.info("No tag found")
             return None, text
 
+
     def ask(self, collection: str, question: str, k: int = 5):
 
         doc_id, question = self.extract_tag(question)
